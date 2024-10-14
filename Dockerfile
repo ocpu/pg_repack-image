@@ -3,8 +3,7 @@ RUN apk add unzip wget curl
 ARG VERSION
 WORKDIR /pg_repack
 
-# RUN curl -O /pg_repack.zip https://api.pgxn.org/dist/pg_repack/${VERSION}/pg_repack-${VERSION}.zip
-COPY pg_repack-${VERSION}.zip /pg_repack.zip
+RUN curl -o /pg_repack.zip https://api.pgxn.org/dist/pg_repack/${VERSION}/pg_repack-${VERSION}.zip
 RUN unzip /pg_repack.zip "pg_repack-${VERSION}/*" -d . && mv pg_repack-${VERSION}/* . && rm -r pg_repack-${VERSION}
 
 FROM debian:bookworm-slim as builder
