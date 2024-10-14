@@ -1,5 +1,9 @@
 REPO := ocpu/pg_repack
 
+1.5.1: VERSION=1.5.1
+1.5.1: PG_VERSION=17
+1.5.1: build
+
 1.5.0: VERSION=1.5.0
 1.5.0: PG_VERSION=16
 1.5.0: build
